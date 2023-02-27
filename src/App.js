@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Confetti from "react-confetti";
+
 import { randomNumberGenerator } from "./utilities/randomNumberGenerator";
 
 function App() {
@@ -9,6 +11,9 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [message, setMessage] = useState("Start guessing...");
   const [isGameStart, setIsGameStart] = useState(true);
+
+  const isCorrect = message === "Correct!";
+  const bgMainColor = !isCorrect ? "bg-primary-500" : "bg-teal-500";
 
   const handleClickAgain = () => {
     setMessage("Start guessing...");
@@ -44,7 +49,9 @@ function App() {
   };
 
   return (
-    <main className="h-screen w-full bg-primary-500 font-pixel text-slate-200">
+    <main
+      className={`h-screen w-full ${bgMainColor} font-pixel text-slate-200`}>
+      {isCorrect && <Confetti />}
       {/* Upper section */}
       <div className="flex flex-wrap-reverse items-center justify-between gap-3 p-2 text-sm">
         <button
@@ -79,7 +86,7 @@ function App() {
             placeholder="1"
             value={guessNumber}
             onChange={(e) => setGuessNumber(e.target.value)}
-            className="h-32 w-1/2 max-w-sm border-8 bg-primary-500 text-center text-2xl"
+            className="h-32 w-1/2 max-w-sm border-8 bg-transparent text-center text-2xl"
           />
           <button type="submit" className="bg-slate-200 p-4 text-primary-500">
             Check
