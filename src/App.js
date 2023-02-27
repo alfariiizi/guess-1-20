@@ -77,7 +77,7 @@ function App() {
         </section>
 
         <div className="flex flex-col items-center justify-center gap-4">
-          <section className="my-5 flex justify-center text-center">
+          <section className="flex h-[6ch] w-72 items-center justify-center py-3 text-center">
             <div>{message}</div>
           </section>
 
