@@ -56,7 +56,7 @@ function App() {
       <div className="flex flex-wrap-reverse items-center justify-between gap-3 p-2 text-sm sm:py-4 sm:px-8 md:px-14 lg:px-20">
         <button
           onClick={handleClickAgain}
-          className="bg-slate-200 p-2 text-primary-500">
+          className="bg-slate-200 p-2 text-primary-500 hover:bg-slate-400">
           Again!
         </button>
         <p>(Between 1 - 20)</p>
@@ -92,7 +92,7 @@ function App() {
               />
               <button
                 type="submit"
-                className="bg-slate-200 p-4 text-primary-500">
+                className="bg-slate-200 p-4 text-primary-500 hover:bg-slate-400">
                 Check
               </button>
             </div>
