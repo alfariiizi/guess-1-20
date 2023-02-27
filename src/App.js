@@ -50,7 +50,7 @@ function App() {
 
   return (
     <main
-      className={`h-screen w-full ${bgMainColor} font-pixel text-slate-200`}>
+      className={`h-screen w-full ${bgMainColor} overflow-hidden font-pixel text-slate-200`}>
       {isCorrect && <Confetti />}
       {/* Upper section */}
       <div className="flex flex-wrap-reverse items-center justify-between gap-3 p-2 text-sm">
