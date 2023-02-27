@@ -53,7 +53,7 @@ function App() {
       className={`h-screen w-full ${bgMainColor} overflow-hidden font-pixel text-slate-200`}>
       {isCorrect && <Confetti />}
       {/* Upper section */}
-      <div className="flex flex-wrap-reverse items-center justify-between gap-3 p-2 text-sm">
+      <div className="flex flex-wrap-reverse items-center justify-between gap-3 p-2 text-sm sm:py-4 sm:px-8 md:px-14 lg:px-20">
         <button
           onClick={handleClickAgain}
           className="bg-slate-200 p-2 text-primary-500">
@@ -63,36 +63,42 @@ function App() {
       </div>
 
       {/* Title section */}
-      <section className="my-14 flex justify-center text-center text-xl">
+      <section className="my-14 flex justify-center text-center text-xl sm:text-3xl">
         <h1>Guess The Number</h1>
       </section>
 
-      {/* Score section */}
-      <section className="my-11 flex flex-col items-center justify-center text-sm">
-        <div className="flex flex-col gap-2">
-          <div>&#x1f4af; High Score: {highScore}</div>
-          <div>🚀 Current Score: {score}</div>
-        </div>
-      </section>
+      <div className="my-11 flex flex-wrap justify-center gap-5">
+        {/* Score section */}
+        <section className="flex flex-col items-center justify-center text-sm">
+          <div className="flex flex-col gap-2">
+            <div>&#x1f4af; High Score: {highScore}</div>
+            <div>🚀 Current Score: {score}</div>
+          </div>
+        </section>
 
-      <section className="my-5 flex justify-center text-center">
-        <div>{message}</div>
-      </section>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <section className="my-5 flex justify-center text-center">
+            <div>{message}</div>
+          </section>
 
-      <form action="" onSubmit={handleSubmit}>
-        <div className="flex flex-col items-center justify-center gap-11">
-          <input
-            type="number"
-            placeholder="1"
-            value={guessNumber}
-            onChange={(e) => setGuessNumber(e.target.value)}
-            className="h-32 w-1/2 max-w-sm border-8 bg-transparent text-center text-2xl"
-          />
-          <button type="submit" className="bg-slate-200 p-4 text-primary-500">
-            Check
-          </button>
+          <form action="" onSubmit={handleSubmit}>
+            <div className="flex flex-col items-center justify-center gap-7">
+              <input
+                type="number"
+                placeholder="1"
+                value={guessNumber}
+                onChange={(e) => setGuessNumber(e.target.value)}
+                className="h-32 w-1/2 max-w-sm border-8 bg-transparent text-center text-2xl"
+              />
+              <button
+                type="submit"
+                className="bg-slate-200 p-4 text-primary-500">
+                Check
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </main>
   );
 }
